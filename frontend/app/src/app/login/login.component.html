@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="login.component.css">
+  <title>Login</title>
+</head>
+<body>
+  <div class="login-container">
+    <div class="logo_back">
+      <img src="logo_1.png" class="logo_ima" alt="Logo">
+    </div>
+    <h2>Bienvenido</h2>
+    <form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
+        <label for="username">Nombre de usuario:</label>
+        <input type="text" id="username" name="username" [(ngModel)]="username" required>
+  
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" required>
+  
+        <div class="forgot-password">
+          <a href="https://www.youtube.com/watch?v=KLgQKiUk7ms&ab_channel=LinkinPark" target="_blank">¿Olvidaste tu contraseña?</a>
+        </div>
+  
+        <input type="submit" value="Login" [disabled]="!loginForm.valid">
+    </form>
+    <!-- <div *ngIf="message">{{ message }}</div> Mensaje de respuesta -->
+  </div>  
+</body>
+</html>

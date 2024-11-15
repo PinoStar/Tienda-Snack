@@ -1,0 +1,114 @@
+/* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    width: 100%;
+    height: 100%;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #1e2a38;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  /* Contenedor principal que ocupa toda la pantalla */
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100vw;
+    max-width: 1200px; /* Limitar el ancho máximo en pantallas grandes */
+    background-color: #1e2a38; /* Color oscuro de fondo */
+  }
+  
+  /* Barra superior */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1e2a38; /* Color oscuro */
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .icons .icon {
+    color: #00bcd4; /* Color azul de los iconos */
+    font-size: 1.5rem;
+    margin-left: 20px;
+    cursor: pointer;
+  }
+  
+  /* Contenido principal */
+  .content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto; /* Permitir desplazamiento en contenido largo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  
+  /* Menú inferior */
+  .footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+    background-color: #121c24;
+  }
+  
+  .footer-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .footer-btn:hover {
+    background-color: #444;
+  }
+  
+  /* Estilos específicos para dispositivos móviles */
+  @media (max-width: 768px) {
+    .title {
+      font-size: 1.5rem;
+    }
+  
+    .icons .icon {
+      font-size: 1.2rem;
+    }
+  
+    .footer-btn {
+      padding: 8px 12px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Estilos específicos para pantallas grandes */
+  @media (min-width: 1200px) {
+    .container {
+      margin: 0 auto;
+      border-radius: 10px; /* Añadir bordes redondeados */
+      overflow: hidden;
+    }
+  }
+  
