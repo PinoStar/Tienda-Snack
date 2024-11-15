@@ -52,7 +52,15 @@ app.post('/login', (req, res) => {
         }
     });
 });
-
+app.post('/lista',(req,res)=>{
+    db.query('SELECT * FROM productos',(err,results)=>{
+        if(err){
+            res.status(500).json({success:false,message:'Error en el servidor'});
+        }else{
+            res.json(results);
+        }
+    });
+})
 // Inicia el servidor
 app.listen(port, () => {
     console.log(`Servidor corriendo en http://localhost:${port}`);
