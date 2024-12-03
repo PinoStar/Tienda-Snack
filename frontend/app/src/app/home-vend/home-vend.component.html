@@ -1,34 +1,24 @@
-<!doctype html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interfaz Vendedor</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="stylesheet" href="home-vend.component.css">
-</head>
-<body>
-  <div class="container">
-    <!-- Barra superior -->
-    <header class="header">
-      <span class="title">Vendedor</span>
-      <div class="icons">
-        <i class="icon fas fa-bell"></i>
-        <i class="icon fas fa-cog"></i>
-        <i class="icon fas fa-user"></i>
-      </div>
-    </header>
+<div class="container">
+  <header class="header">
+    <span class="title">Vendedor</span>
+    <div class="icons">
+      <i class="icon fas fa-bell"></i>
+      <i class="icon fas fa-cog"></i>
+      <i class="icon fas fa-user"></i>
+    </div>
+  </header>
 
-    <!-- Contenido principal -->
-    <main class="content">
-      <!-- Aquí puedes agregar el contenido principal, por ejemplo una lista de productos -->
-    </main>
+  <main class="content">
+    <!-- Condición para mostrar HomeFactComponent -->
+    <app-home-fact *ngIf="view === 'HomeFact'"></app-home-fact>
 
-    <!-- Menú inferior -->
-    <footer class="footer">
-      <button class="footer-btn">Registro de Pedidos</button>
-      <button class="footer-btn">Catálogos</button>
-    </footer>
-  </div>
-</body>
-</html>
+    <!-- Condición para mostrar HomeAdmiComponent -->
+    <app-registro-pedi *ngIf="view === 'RegistroPedi'"></app-registro-pedi>
+  </main>
+
+  <!-- Menú inferior con botones para cambiar de vista -->
+  <footer class="footer">
+    <button class="footer-btn" (click)="switchView('HomeFact')">Registro de Pedidos</button>
+    <button class="footer-btn" (click)="switchView('RegistroPedi')">Catálogos</button>
+  </footer>
+</div>

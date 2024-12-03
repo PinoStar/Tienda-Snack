@@ -43,6 +43,7 @@
   .title {
     font-size: 2rem;
     font-weight: bold;
+    color: white;
   }
   
   .icons .icon {
@@ -53,17 +54,19 @@
   }
   
   /* Contenido principal */
-  .content {
-    flex: 1;
-    padding: 20px;
-    overflow-y: auto; /* Permitir desplazamiento en contenido largo */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-size: 1.2rem;
-  }
-  
+.content {
+  flex: 1;
+  padding: 40px;  /* Aumentar el relleno para más espacio dentro */
+  overflow-y: auto; /* Permitir desplazamiento en contenido largo */
+  /*display: flex;*/
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.2rem; /* El tamaño de la fuente puede ajustarse por separado */
+  min-height: 60vh; /* Mantener una altura mínima */
+  width: 95%; /* Aumentar el ancho en el eje X */
+}
+
   /* Menú inferior */
   .footer {
     display: flex;
