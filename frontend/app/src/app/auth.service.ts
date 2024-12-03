@@ -6,11 +6,17 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:3000/login';
+  private baseUrl = 'http://localhost:3000'; // Base URL
 
   constructor(private http: HttpClient) {}
 
+  // Método para iniciar sesión
   login(username: string, password: string): Observable<any> {
-    return this.http.post<any>(this.apiUrl, { username, password: password });
+    return this.http.post<any>(`${this.baseUrl}/login`, { username, password });
+  }
+
+  // Método para obtener productos
+  getProductos(): Observable<any[]> {
+    return this.http.post<any[]>(`${this.baseUrl}/lista`, {}); // Endpoint específico
   }
 }
