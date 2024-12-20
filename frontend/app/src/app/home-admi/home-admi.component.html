@@ -1,1 +1,66 @@
-<p>home-admi works!</p>
+<div class="container">
+  <!-- Sección de Usuarios -->
+  <h2>Gestión de Usuarios</h2>
+  <form (ngSubmit)="agregarUsuario()">
+      <input [(ngModel)]="nuevoUsuario.username" name="username" placeholder="Nombre" required />
+      <input [(ngModel)]="nuevoUsuario.password" name="password" type="password" placeholder="Contraseña" required />
+      <input [(ngModel)]="nuevoUsuario.rol" name="rol" placeholder="Rol" required />
+      <button type="submit">Agregar Usuario</button>
+  </form>
+  <ul>
+      <li *ngFor="let usuario of usuarios">
+          {{ usuario.username }} - {{ usuario.rol }}
+          <button (click)="eliminarUsuario(usuario.id)">Eliminar</button>
+      </li>
+  </ul>
+
+  <!-- Sección de Productos -->
+  <h2>Gestión de Productos</h2>
+  <form (ngSubmit)="agregarProducto()">
+      <input [(ngModel)]="nuevoProducto.nombre" name="productoNombre" placeholder="Nombre del Producto" required />
+      <input [(ngModel)]="nuevoProducto.precio" name="productoPrecio" type="number" placeholder="Precio" step="0.01" required />
+      <input [(ngModel)]="nuevoProducto.stock" name="productoStock" type="number" placeholder="Stock" required />
+      <input [(ngModel)]="nuevoProducto.imagen_url" name="productoImagen" type="text"  placeholder="Pega aquí la URL de la imagen" />
+
+      <select [(ngModel)]="nuevoProducto.tienda_id" name="productoTienda" placeholder= "Seleccione la Tienda" required>
+          <option *ngFor="let tienda of tiendas" [value]="tienda.id">{{ tienda.nombre }}</option>
+      </select>
+      
+      
+      
+      <!-- <input type="file" (change)="onFileSelected($event)" accept="image/*" /> -->
+
+      <button type="submit">Agregar Producto</button>
+  </form>
+
+  <ul>
+    <li *ngFor="let producto of productos">
+        {{ producto.nombre }} - ${{ producto.precio }} - Stock: {{ producto.stock }} - Tienda: {{ getTiendaNombre(producto.tienda_id) }}
+        <br />
+        <img [src]="producto.imagen_url"  class="producto-imagen"/>
+        <!-- Imagen: {{ producto.imagen_url }} -->
+        <button (click)="eliminarProducto(producto.id)">Eliminar</button>
+    </li>
+</ul>
+
+  <!-- <ul>
+      <li *ngFor="let producto of productos">
+          {{ producto.nombre }} - ${{ producto.precio }} - Stock: {{ producto.stock }} - Tienda: {{ getTiendaNombre(producto.tienda_id) }}
+          <button (click)="eliminarProducto(producto.id)">Eliminar</button>
+      </li>
+  </ul> -->
+
+  <!-- Sección de Tiendas -->
+  <h2>Gestión de Tiendas</h2>
+  <form (ngSubmit)="agregarTienda()">
+      <input [(ngModel)]="nuevaTienda.nombre" name="tiendaNombre" placeholder="Nombre de la Tienda" required />
+      <input [(ngModel)]="nuevaTienda.ubicacion" name="tiendaUbicacion" placeholder="Ubicación de la Tienda" required />
+      <button type="submit">Agregar Tienda</button>
+  </form>
+  <ul>
+      <li *ngFor="let tienda of tiendas">
+          {{ tienda.nombre }} - Ubicación: {{ tienda.ubicacion }}
+          <button (click)="eliminarTienda(tienda.id)">Eliminar</button>
+      </li>
+  </ul>
+</div>

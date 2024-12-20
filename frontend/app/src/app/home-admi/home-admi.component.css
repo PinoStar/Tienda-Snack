@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  /*font-family: Georgia, 'Times New Roman';*/
+  background-color: #0d1b2a; /* Fondo azul marino oscuro */
+  color: #ffffff;
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  background-color: #1b263b; /* Azul intermedio */
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #00aaff; /* Azul brillante */
+  text-align: center;
+}
+
+form {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, select, button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+}
+
+input, select {
+  background-color: #415a77; /* Azul grisáceo */
+  color: #ffffff;
+}
+
+button {
+  background-color: #0077b6; /* Azul oscuro */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0096c7; /* Azul más claro */
+}
+
+button:last-child {
+  background-color: #0099ff; 
+}
+
+button:last-child:hover {
+  background-color:#6cf941; 
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #0077b6 ; /* Azul grisáceo */
+  color: #ffffff;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+li button {
+  padding: 5px 10px;
+  font-size: 14px;
+  background-color: #1b263b; /* Botones en azul oscuro */
+  border: none;
+  color: #ffffff;
+}
+.producto-imagen{
+  width: 5%;
+  height: auto;
+  float: right; /* Mueve la imagen hacia la derecha */
+  border-radius: 5px;
+  margin-left: 200px;
+}
+
+li button:hover {
+  background-color: #c70000; /* Azul más claro */
+}

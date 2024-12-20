@@ -17,9 +17,32 @@ import { RegistroPediComponent } from '../registro-pedi/registro-pedi.component'
   styleUrls: ['./home-vend.component.css']  // Fíjate que sea 'styleUrls' en plural
 })
 export class HomeVendComponent {
+  
+  visto:boolean=true;
   view: string = 'HomeFact';  // Estado inicial
+
+
+
+
+  // vista(){
+  //   if (this.visto !=true){
+  //     this.view=vie
+  //   }
+  // }
 
   switchView(viewName: string) {
     this.view = viewName;
   }
+
+  
+  // switchViews(visto:boolean) {
+  //   if (this.visto !=true){
+  //     this.view = 'HomeFact';
+  //     this.visto=true
+  //   }else{
+  //     this.view = 'RegistroPedi';
+  //     this.visto=false
+  //   }
+    
+  // }
 }

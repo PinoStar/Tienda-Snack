@@ -52,15 +52,148 @@ app.post('/login', (req, res) => {
         }
     });
 });
-app.post('/lista',(req,res)=>{
-    db.query('SELECT * FROM productos',(err,results)=>{
-        if(err){
-            res.status(500).json({success:false,message:'Error en el servidor'});
-        }else{
+
+
+// === Usuarios ===
+
+// Listar usuarios
+app.get('/usuarios', (req, res) => {
+    db.query('SELECT * FROM usuarios', (err, results) => {
+        if (err) {
+            res.status(500).json({ success: false, message: 'Error en el servidor' });
+        } else {
             res.json(results);
         }
     });
-})
+});
+
+// Agregar usuario
+app.post('/usuarios', (req, res) => {
+    const { username, password, rol } = req.body;
+    db.query('INSERT INTO usuarios (username, password, rol) VALUES (?, ?, ?)', [username, password, rol], (err, results) => {
+        if (err) {
+            res.status(500).json({ success: false, message: 'Error al agregar usuario' });
+        } else {
+            res.json({ success: true, message: 'Usuario agregado con éxito', id: results.insertId });
+        }
+    });
+});
+
+// Eliminar usuario
+app.delete('/usuarios/:id', (req, res) => {
+    const { id } = req.params;
+    db.query('DELETE FROM usuarios WHERE id = ?', [id], (err) => {
+        if (err) {
+            res.status(500).json({ success: false, message: 'Error al eliminar usuario' });
+        } else {
+            res.json({ success: true, message: 'Usuario eliminado con éxito' });
+        }
+    });
+});
+
+// === Productos ===
+
+// Listar productos
+app.get('/productos', (req, res) => {
+    db.query('SELECT * FROM productos', (err, results) => {
+        if (err) {
+            res.status(500).json({ success: false, message: 'Error en el servidor' });
+        } else {
+            res.json(results);
+        }
+    });
+});
+
+// Agregar producto
+app.post('/productos', (req, res) => {
+    const { nombre, precio, stock, tienda_id,imagen_url } = req.body; // Cambié 'tienda' por 'tienda_id'
+    db.query('INSERT INTO productos (nombre, precio, stock, tienda_id, imagen_url) VALUES (?, ?, ?, ?, ?)', [nombre, precio, stock, tienda_id, imagen_url], (err, results) => {
+        if (err) {
+            console.error('Error al agregar producto:', err);  // Agregar consola para detalles del error
+            res.status(500).json({ success: false, message: 'Error al agregar producto', error: err });
+        } else {
+            res.json({ success: true, message: 'Producto agregado con éxito', id: results.insertId });
+        }
+    });
+    
+});
+
+
+// Actualizar producto
+app.put('/productos/:id', (req, res) => {
+    const { id } = req.params;
+    const { nombre, precio, stock, tienda } = req.body;
+    db.query('UPDATE productos SET nombre = ?, precio = ?, stock = ?, tienda = ? WHERE id = ?', [nombre, precio, stock, tienda, id], (err) => {
+        if (err) {
+            res.status(500).json({ success: false, message: 'Error al actualizar producto' });
+        } else {
+            res.json({ success: true, message: 'Producto actualizado con éxito' });
+        }
+    });
+});
+
+// Eliminar producto
+app.delete('/productos/:id', (req, res) => {
+    const { id } = req.params;
+    db.query('DELETE FROM productos WHERE id = ?', [id], (err) => {
+        if (err) {
+            res.status(500).json({ success: false, message: 'Error al eliminar producto' });
+        } else {
+            res.json({ success: true, message: 'Producto eliminado con éxito' });
+        }
+    });
+});
+
+// === Tiendas ===
+
+// Listar tiendas
+app.get('/tiendas', (req, res) => {
+    db.query('SELECT * FROM tiendas', (err, results) => {
+        if (err) {
+            res.status(500).json({ success: false, message: 'Error en el servidor' });
+        } else {
+            res.json(results);
+        }
+    });
+});
+
+// Agregar tienda
+app.post('/tiendas', (req, res) => {
+    const { nombre, ubicacion } = req.body;
+    db.query('INSERT INTO tiendas (nombre, ubicacion) VALUES (?, ?)', [nombre, ubicacion], (err, results) => {
+        if (err) {
+            res.status(500).json({ success: false, message: 'Error al agregar tienda' });
+        } else {
+            res.json({ success: true, message: 'Tienda agregada con éxito', id: results.insertId });
+        }
+    });
+});
+
+// Actualizar tienda
+app.put('/tiendas/:id', (req, res) => {
+    const { id } = req.params;
+    const { nombre, ubicacion } = req.body;
+    db.query('UPDATE tiendas SET nombre = ?, ubicacion = ? WHERE id = ?', [nombre, ubicacion, id], (err) => {
+        if (err) {
+            res.status(500).json({ success: false, message: 'Error al actualizar tienda' });
+        } else {
+            res.json({ success: true, message: 'Tienda actualizada con éxito' });
+        }
+    });
+});
+
+// Eliminar tienda
+app.delete('/tiendas/:id', (req, res) => {
+    const { id } = req.params;
+    db.query('DELETE FROM tiendas WHERE id = ?', [id], (err) => {
+        if (err) {
+            res.status(500).json({ success: false, message: 'Error al eliminar tienda' });
+        } else {
+            res.json({ success: true, message: 'Tienda eliminada con éxito' });
+        }
+    });
+});
+
 // Inicia el servidor
 app.listen(port, () => {
     console.log(`Servidor corriendo en http://localhost:${port}`);
