@@ -1,0 +1,28 @@
+<div class="banner">
+    <div class="role">
+        {{ userRole }}
+    </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <div class="icon-container">
+        <!-- Ícono de nota de venta solo visible para Vendedor -->
+        <ng-container *ngIf="userRole.trim().toLowerCase() === 'vendedor'; else noSaleIcon">
+            <div class="icon">
+            <i class="fas fa-file-alt"></i> <!-- Ícono de nota de venta -->
+            </div>
+        </ng-container>
+
+        <!-- Ícono de campana -->
+        <div class="icon">
+            <i class="fas fa-bell"></i>
+        </div>
+
+        <!-- Ícono de perfil -->
+        <div class="icon">
+            <i class="fas fa-user-circle"></i>
+        </div>
+
+        
+        <!-- Si no es Vendedor, no se muestra el ícono -->
+        <ng-template #noSaleIcon></ng-template>
+
+</div>

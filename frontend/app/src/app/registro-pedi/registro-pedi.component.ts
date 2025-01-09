@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';  // Importa CommonModule
 import { AuthService } from '../auth.service';  // Ajusta la ruta según tu estructura
+
 @Component({
   selector: 'app-registro-pedi',
   standalone: true,
@@ -9,18 +10,18 @@ import { AuthService } from '../auth.service';  // Ajusta la ruta según tu estr
   styleUrl: './registro-pedi.component.css'
 })
 export class RegistroPediComponent implements OnInit {
-  productos: any[] = [];  // Array para almacenar los productos
+  tiendas: any[] = [];    // Array para almacenar las tiendas
 
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
-    this.authService.getProductos().subscribe({
+    this.authService.getTiendas().subscribe({
       next: (data) => {
-        this.productos = data;  // Asigna los productos recibidos a la variable
-        console.log('Productos cargados:', this.productos);
+        this.tiendas = data;  // Asigna las tiendas recibidas a la variable
+        console.log('Tiendas cargadas:', this.tiendas);
       },
       error: (err) => {
-        console.error('Error al obtener productos:', err);
+        console.error('Error al obtener tiendas:', err);
       }
     });
   }

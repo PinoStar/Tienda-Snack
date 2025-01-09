@@ -1,0 +1,30 @@
+.productos-container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #1a1a2e;
+    border-radius: 10px;
+    color: white;
+  }
+  
+  .producto-card {
+    background-color: #0099ff;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  h3, p {
+    margin: 0;
+  }
+  
+  .producto-imagen {
+    width: 50px; /* O ajusta el tamaño como necesites */
+    height: auto; /* Mantén una proporción cuadrada o ajusta */
+    object-fit: cover; /* Asegura que la imagen se ajuste sin distorsionarse */
+    border-radius: 5px; /* Redondear las esquinas de la imagen si lo prefieres */
+  }
+  

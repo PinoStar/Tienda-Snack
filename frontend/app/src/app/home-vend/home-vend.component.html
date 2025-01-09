@@ -1,24 +1,16 @@
+<app-banner></app-banner>
 <div class="container">
-  <header class="header">
-    <span class="title">Vendedor</span>
-    <div class="icons">
-      <i class="icon fas fa-bell"></i>
-      <i class="icon fas fa-cog"></i>
-      <i class="icon fas fa-user"></i>
-    </div>
-  </header>
-
   <main class="content">
-    <!-- Condición para mostrar HomeFactComponent -->
-    <app-home-fact *ngIf="view === 'HomeFact'"></app-home-fact>
-
+    
+    <app-catalogo *ngIf="view === 'Catalogo'"></app-catalogo>
     <!-- Condición para mostrar HomeAdmiComponent -->
     <app-registro-pedi *ngIf="view === 'RegistroPedi'"></app-registro-pedi>
+    
   </main>
 
   <!-- Menú inferior con botones para cambiar de vista -->
   <footer class="footer">
-    <button class="footer-btn" (click)="switchView('HomeFact')">Registro de Pedidos</button>
-    <button class="footer-btn" (click)="switchView('RegistroPedi')">Catálogos</button>
+    <button class="footer-btn" (click)="switchView('RegistroPedi')">Registro de Pedidos</button>
+    <button class="footer-btn" (click)="switchView('Catalogo')">Catálogos</button>
   </footer>
 </div>

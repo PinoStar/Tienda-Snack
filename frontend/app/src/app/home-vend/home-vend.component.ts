@@ -1,25 +1,25 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';  // Importa CommonModule
-import { HomeFactComponent } from "../home-fact/home-fact.component";
-import { HomeAdmiComponent } from "../home-admi/home-admi.component";
 import { RegistroPediComponent } from '../registro-pedi/registro-pedi.component';
+import { BannerComponent } from "../banner/banner.component";
+import { CatalogoComponent } from './catalogo/catalogo.component';
 
 @Component({
   selector: 'app-home-vend',
   standalone: true,
   imports: [
-    CommonModule,  // Asegúrate de incluir CommonModule aquí
-    HomeFactComponent,
+    CommonModule, // Asegúrate de incluir CommonModule aquí
     RegistroPediComponent,
-    //HomeAdmiComponent
-  ],
+    BannerComponent,
+    CatalogoComponent
+],
   templateUrl: './home-vend.component.html',
   styleUrls: ['./home-vend.component.css']  // Fíjate que sea 'styleUrls' en plural
 })
 export class HomeVendComponent {
   
   visto:boolean=true;
-  view: string = 'HomeFact';  // Estado inicial
+  view: string = 'RegistroPedi';  // Estado inicial
 
 
 

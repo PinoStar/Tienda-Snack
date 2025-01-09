@@ -23,7 +23,7 @@ export class LoginComponent {
     this.authService.login(this.username, this.password).subscribe({
         next: (response) => {
             if (response.success) {
-                alert('Inicio de sesión exitoso');
+                localStorage.setItem('userRole', response.rol);
                 // Redirigir según el rol
                 if (response.rol === 'vendedor') {
                     this.router.navigate(['/HomeVend']);
