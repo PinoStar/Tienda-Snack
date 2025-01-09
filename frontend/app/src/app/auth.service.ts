@@ -15,6 +15,13 @@ export class AuthService {
     return this.http.post<any>(`${this.baseUrl}/login`, { username, password });
   }
 
+  getRole(): string {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      return localStorage.getItem('userRole') || '';  // Devuelve el rol o una cadena vacía si no existe
+    }
+    return '';  // Si no está disponible localStorage, devuelve una cadena vacía
+  }
+  
   // Métodos para obtener productos, usuarios y tiendas
   getProductos(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/productos`);

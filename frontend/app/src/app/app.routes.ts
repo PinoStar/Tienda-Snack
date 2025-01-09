@@ -4,6 +4,7 @@ import { HomeFactComponent } from './home-fact/home-fact.component';
 import { HomeAdmiComponent } from './home-admi/home-admi.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroPediComponent } from './registro-pedi/registro-pedi.component';
+import { CatalogoComponent } from './home-vend/catalogo/catalogo.component';
 import { AppComponent } from './app.component';
 
 export const routes: Routes = [
@@ -12,6 +13,7 @@ export const routes: Routes = [
   { path: 'HomeFact', component: HomeFactComponent },
   { path: 'HomeAdmi', component: HomeAdmiComponent },
   { path: 'RegistroPedi', component: RegistroPediComponent },
+  {path: 'Catalogo',component:CatalogoComponent},
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Redirección a /login
   //{ path: '**', component: LoginComponent } // Ruta wildcard para cualquier otra ruta
 ];

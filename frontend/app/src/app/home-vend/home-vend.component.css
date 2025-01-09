@@ -25,20 +25,20 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100vh;
+    height: 86vh;
     width: 100vw;
     max-width: 1200px; /* Limitar el ancho máximo en pantallas grandes */
     background-color: #1e2a38; /* Color oscuro de fondo */
   }
   
-  /* Barra superior */
+  /* Barra superior
   .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #1e2a38; /* Color oscuro */
-  }
+    background-color: #1e2a38; /* Color oscuro 
+  } */
   
   .title {
     font-size: 2rem;

@@ -1,1 +1,10 @@
-<p>catalogo works!</p>
+<div class="productos-container">
+    <h2>Lista de Productos</h2>
+    <div *ngFor="let producto of productos" class="producto-card">
+      <img [src]="producto.imagen_url" alt="{{ producto.nombre }}" class="producto-imagen"/>
+      <h3>{{ producto.nombre }}</h3>
+      <p class="producto-precio">{{ producto.precio }} USD</p>
+    </div>
+  </div>
+  
+  

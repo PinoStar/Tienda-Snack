@@ -1,30 +1,42 @@
-.productos-container {
-    width: 80%;
-    margin: 20px auto;
-    padding: 10px;
-    background-color: #1a1a2e;
-    border-radius: 10px;
-    color: white;
-  }
-  
-  .producto-card {
-    background-color: #0099ff;
-    border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  h3, p {
-    margin: 0;
-  }
-  
-  .producto-imagen {
-    width: 50px; /* O ajusta el tamaño como necesites */
-    height: auto; /* Mantén una proporción cuadrada o ajusta */
-    object-fit: cover; /* Asegura que la imagen se ajuste sin distorsionarse */
-    border-radius: 5px; /* Redondear las esquinas de la imagen si lo prefieres */
-  }
-  
+.tiendas-container {
+  width: 80%;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #1a1a2e;
+  border-radius: 10px;
+  color: white;
+}
+
+.tienda-card {
+  background-color: #0099ff;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;  /* Alinea imagen y texto verticalmente */
+}
+
+.tienda-imagen {
+  width: 50px; /* Ajusta el tamaño de la imagen */
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 30px; /* Espacio entre imagen y texto */
+}
+
+.tienda-info {
+  flex-grow: 1; /* Asegura que el contenido se expanda correctamente */
+  text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.tienda-nombre {
+  font-weight: bold; /* Nombre en negrita */
+  font-size: 1.2em;  /* Tamaño de la fuente */
+  margin: 0;
+}
+
+.tienda-descripcion {
+  font-size: 0.9em;  /* Tamaño más pequeño para la descripción */
+  color: #d3d3d3;    /* Color para la descripción */
+  margin-top: 5px;   /* Espacio entre el nombre y la descripción */
+}
