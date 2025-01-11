@@ -104,10 +104,25 @@ app.get('/productos', (req, res) => {
     });
 });
 
+app.get('/productos/:id', (req, res) => {
+    const { id } = req.params;
+    db.query('SELECT * FROM productos WHERE id = ?', [id], (err, results) => {
+        if (err) {
+            console.error('Error en la consulta:', err);  // Agregar esta línea
+            res.status(500).json({ success: false, message: 'Error en el servidor' });
+        } else if (results.length === 0) {
+            res.status(404).json({ success: false, message: 'Producto no encontrado' });
+        } else {
+            res.json(results[0]);
+        }
+    });
+});
+
+
 // Agregar producto
 app.post('/productos', (req, res) => {
-    const { nombre, precio, stock, tienda_id,imagen_url } = req.body; // Cambié 'tienda' por 'tienda_id'
-    db.query('INSERT INTO productos (nombre, precio, stock, tienda_id, imagen_url) VALUES (?, ?, ?, ?, ?)', [nombre, precio, stock, tienda_id, imagen_url], (err, results) => {
+    const { nombre, descripcion, precio, stock, tienda_id,imagen_url } = req.body; // Cambié 'tienda' por 'tienda_id'
+    db.query('INSERT INTO productos (nombre,descripcion, precio, stock, tienda_id, imagen_url) VALUES (?, ?, ?, ?, ?)', [nombre, precio, stock, tienda_id, imagen_url], (err, results) => {
         if (err) {
             console.error('Error al agregar producto:', err);  // Agregar consola para detalles del error
             res.status(500).json({ success: false, message: 'Error al agregar producto', error: err });
@@ -123,7 +138,7 @@ app.post('/productos', (req, res) => {
 app.put('/productos/:id', (req, res) => {
     const { id } = req.params;
     const { nombre, precio, stock, tienda } = req.body;
-    db.query('UPDATE productos SET nombre = ?, precio = ?, stock = ?, tienda = ? WHERE id = ?', [nombre, precio, stock, tienda, id], (err) => {
+    db.query('UPDATE productos SET nombre = ?,descripcion=?, precio = ?, stock = ?, tienda = ? WHERE id = ?', [nombre, precio, stock, tienda, id], (err) => {
         if (err) {
             res.status(500).json({ success: false, message: 'Error al actualizar producto' });
         } else {

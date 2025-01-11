@@ -16,7 +16,7 @@ export class HomeAdmiComponent implements OnInit {
   tiendas: any[] = [];
 
   nuevoUsuario = { username: '', password: '', rol: '' };
-  nuevoProducto = { nombre: '', precio: 0, stock: 0, tienda_id: '', imagen_url: '' };
+  nuevoProducto = { nombre: '',descripcion: '', precio: 0, stock: 0, tienda_id: '', imagen_url: '' };
   nuevaTienda = { nombre: '', ubicacion: '' };
 
   constructor(private authService: AuthService) {}
@@ -91,13 +91,13 @@ export class HomeAdmiComponent implements OnInit {
   // }
 
   agregarProducto() {
-    if (this.nuevoProducto.nombre && this.nuevoProducto.precio > 0 && this.nuevoProducto.stock >= 0 && this.nuevoProducto.tienda_id != null && this.nuevoProducto.imagen_url != null) {
+    if (this.nuevoProducto.nombre && this.nuevoProducto.descripcion && this.nuevoProducto.precio > 0 && this.nuevoProducto.stock >= 0 && this.nuevoProducto.tienda_id != null && this.nuevoProducto.imagen_url != null) {
       console.log('Producto a agregar:', this.nuevoProducto);
       this.authService.agregarProducto(this.nuevoProducto).subscribe(
         (producto) => {
           console.log('Producto agregado:', producto);
           this.productos.push(producto);  // Asegúrate de que el producto agregado se incluya en la lista
-          this.nuevoProducto = { nombre: '', precio: 0, stock: 0, tienda_id: '', imagen_url: '' };  // Limpiar formulario
+          this.nuevoProducto = { nombre: '',descripcion: '', precio: 0, stock: 0, tienda_id: '', imagen_url: '' };  // Limpiar formulario
         },
         (error) => {
           console.error('Error al agregar producto', error);

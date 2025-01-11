@@ -5,7 +5,7 @@ import { NgClass, NgIf } from '@angular/common';
 @Component({
   selector: 'app-banner',
   standalone: true,
-  imports: [NgIf,NgClass],
+  imports: [NgIf],
   templateUrl: './banner.component.html',
   styleUrls: ['./banner.component.css']
 })
