@@ -22,6 +22,10 @@ export class AuthService {
     return '';  // Si no está disponible localStorage, devuelve una cadena vacía
   }
   
+  getProductoById(id: number): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/productos/${id}`);
+  }
+
   // Métodos para obtener productos, usuarios y tiendas
   getProductos(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/productos`);

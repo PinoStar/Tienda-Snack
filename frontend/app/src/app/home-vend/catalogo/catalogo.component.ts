@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { AuthService } from '../../auth.service';
 import { OnInit } from '@angular/core';
 import { NgFor } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-catalogo',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor,RouterLink],
   templateUrl: './catalogo.component.html',
   styleUrl: './catalogo.component.css'
 })

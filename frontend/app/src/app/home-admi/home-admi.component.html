@@ -18,6 +18,7 @@
   <h2>Gestión de Productos</h2>
   <form (ngSubmit)="agregarProducto()">
       <input [(ngModel)]="nuevoProducto.nombre" name="productoNombre" placeholder="Nombre del Producto" required />
+      <input [(ngModel)]="nuevoProducto.descripcion" name="productoDescripcion" placeholder="Descripcion del producto" required />
       <input [(ngModel)]="nuevoProducto.precio" name="productoPrecio" type="number" placeholder="Precio" step="0.01" required />
       <input [(ngModel)]="nuevoProducto.stock" name="productoStock" type="number" placeholder="Stock" required />
       <input [(ngModel)]="nuevoProducto.imagen_url" name="productoImagen" type="text"  placeholder="Pega aquí la URL de la imagen" />
