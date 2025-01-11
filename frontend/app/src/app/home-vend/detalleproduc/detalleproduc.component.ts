@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from '../../auth.service';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; // Importa FormsModule para ngModel
+import { FormsModule } from '@angular/forms';
+import { BannerComponent } from "../../banner/banner.component"; // Importa FormsModule para ngModel
 
 @Component({
     selector: 'app-detalleproduc',
     standalone: true,
-    imports: [CommonModule, FormsModule], // Agrega FormsModule aquí
+    imports: [CommonModule, FormsModule, BannerComponent], // Agrega FormsModule aquí
     templateUrl: './detalleproduc.component.html',
     styleUrls: ['./detalleproduc.component.css']
 })
