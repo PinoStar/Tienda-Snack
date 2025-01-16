@@ -144,6 +144,9 @@ export class AuthService {
     return this.http.get<any>(`${this.baseUrl}/facturas/${tiendaid}`);
   }
 
+  getproductosfactura(facturaId: number): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/producfactura/${facturaId}`);
+  }
   // Métodos para agregar productos, usuarios y tiendas
   agregarUsuario(usuario: any): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/usuarios`, usuario);

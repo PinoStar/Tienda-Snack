@@ -1,1 +1,54 @@
-<p>prodcutos-his works!</p>
+<app-banner></app-banner>
+<div class="invoice-container">
+  <header class="invoice-header">
+    <div class="company-info">
+      <button class="back-button" (click)="goBack()">←</button>
+      <h1>MundoSnack</h1>
+      <p>Dirección de la Empresa: Calle Ficticia 123, Ciudad, País</p>
+      <p>RUC: 1234567890</p>
+    </div>
+    <div class="invoice-details">
+      <h2>Factura</h2>
+      <p><strong>Factura ID:</strong> {{factura.factura_id}}</p>
+      <p><strong>Fecha:</strong> {{ formatearFecha(factura.fecha_factura) }}</p>
+    </div>
+  </header>
+
+  <section class="store-info">
+    <h3>Datos de la Tienda</h3>
+    <p><strong>Nombre:</strong> {{factura.nombre_tienda}}</p>
+    <p><strong>Dirección:</strong> {{factura.direccion_tienda}}</p>
+    <p><strong>RUC:</strong> {{factura.ruc_tienda}}</p>
+    <p><strong>Propietario:</strong> {{factura.propietario_tienda}}</p>
+  </section>
+
+  <section class="product-details">
+    <h3>Productos</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Cantidad</th>
+          <th>Precio Unitario</th>
+          <th>Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let detalle of factura.detalles">
+          <td>{{detalle.nombre_producto}}</td>
+          <td>{{detalle.cantidad}}</td>
+          <td>{{detalle.precio_unitario}}</td>
+          <td>{{detalle.subtotal}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer class="total">
+    <p><strong>Subtotal:</strong> {{factura.subtotal_factura}}</p>
+    <p><strong>IVA (15%):</strong> {{factura.iva_factura | number:'1.2-2'}}</p>
+    <p><strong>Total:</strong> {{factura.total_factura | number:'1.2-2'}}</p>
+  </footer>
+
+  <button class="generar-factura" (click)="generarFactura()">Generar Factura</button>
+</div>

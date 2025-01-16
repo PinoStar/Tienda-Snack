@@ -28,6 +28,6 @@ export class BannerComponent implements OnInit {
 
   cerrarSesion() {
     // this.authService.logout();
-    this.router.navigate(['/Login']);
+    this.router.navigate(['/login']);
   }
 }

@@ -2,7 +2,7 @@
 <div class="pedido-container">
     <button class="back-button" (click)="goBack()">←</button>
   <h2>Pedidos</h2>
-  <div *ngFor="let pedidos of pedidos" class="pedido-card" [routerLink]="['/historialtiendas']">
+  <div *ngFor="let pedidos of pedidos" class="pedido-card" [routerLink]="['/ProductosHis', pedidos.factura_id]">
     <div class="pedido-info">
       <h3 class="pedidoid">Pedido N°: {{ pedidos.factura_id }}</h3>
       <h4 class="pedidofecha">Fecha de pedido: {{ pedidos.fecha_factura }}</h4>

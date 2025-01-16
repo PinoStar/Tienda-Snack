@@ -10,6 +10,7 @@ import { DetalleProducComponent } from './home-vend/detalleproduc/detalleproduc.
 import { NotaVentaComponent } from './home-vend/nota-venta/nota-venta.component';
 import { HistoryPediComponent } from './registro-pedi/history-pedi/history-pedi.component';
 import { FactDetallesComponent } from './home-fact/fact-detalles/fact-detalles.component';
+import { ProdcutosHisComponent } from './registro-pedi/prodcutos-his/prodcutos-his.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -17,6 +18,7 @@ export const routes: Routes = [
   { path: 'HomeFact', component: HomeFactComponent },
   { path: 'HomeAdmi', component: HomeAdmiComponent },
   { path: 'RegistroPedi', component: RegistroPediComponent },
+  {path:'ProductosHis/:facturaId',component:ProdcutosHisComponent},
   {path:'HistoryPedi/:tiendaId',component:HistoryPediComponent},
   {path: 'FactDetalles/:pedidoId',component:FactDetallesComponent},
   {path:'detalleproduc',component:DetalleProducComponent},
