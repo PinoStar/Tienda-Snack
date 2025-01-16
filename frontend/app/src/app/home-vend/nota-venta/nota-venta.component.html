@@ -1,0 +1,33 @@
+<app-banner></app-banner>
+<div class="nota-de-venta">
+  <button class="back-button" (click)="goBack()">←</button>
+  <h1>Nota de venta</h1>
+
+  <!-- Encabezado fijo -->
+  <section class="encabezado-fijo">
+    <div class="encabezado-item">Imagen</div>
+    <div class="encabezado-item">Nombre</div>
+    <div class="encabezado-item">Cantidad</div>
+    <div class="encabezado-item">Precio Unitario</div>
+    <div class="encabezado-item">Total</div>
+  </section>
+
+  <!-- Lista dinámica de productos (solo se muestra si productosGenerados es false) -->
+  <section class="productos" *ngIf="!productosGenerados">
+    <article class="producto" *ngFor="let producto of productos">
+      <img class="imagen_url" [src]="producto.imagen_url" alt="Imagen de {{ producto.nombre }}">
+      <div class="producto-item">{{ producto.nombre }}</div>
+      <div class="producto-item">{{ producto.cantidad }}</div>
+      <div class="producto-item">${{ producto.precio }}</div>
+      <div class="producto-item">${{ producto.subtotal }}</div>
+    </article>
+  </section>
+
+  <div class="padre">
+    <div class="totales">
+      <p class="total"><span>Total:</span><span>${{ totalSinImpuesto }}</span></p>
+    </div>
+  </div>
+
+  <button class="button" (click)="GenerarNota()">Generar Nota de Venta</button>
+</div>

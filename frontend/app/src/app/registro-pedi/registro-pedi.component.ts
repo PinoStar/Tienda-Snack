@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';  // Importa CommonModule
 import { AuthService } from '../auth.service';  // Ajusta la ruta según tu estructura
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-registro-pedi',
   standalone: true,
-  imports: [CommonModule],  // Agrega CommonModule aquí
+  imports: [CommonModule,RouterLink],  // Agrega CommonModule aquí
   templateUrl: './registro-pedi.component.html',
   styleUrl: './registro-pedi.component.css'
 })

@@ -1,30 +1,82 @@
 .productos-container {
-    width: 80%;
-    margin: 20px auto;
-    padding: 10px;
-    background-color: #1a1a2e;
-    border-radius: 10px;
-    color: white;
-  }
-  
-  .producto-card {
-    background-color: #0099ff;
-    border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  h3, p {
-    margin: 0;
-  }
-  
-  .producto-imagen {
-    width: 50px; /* O ajusta el tamaño como necesites */
-    height: auto; /* Mantén una proporción cuadrada o ajusta */
-    object-fit: cover; /* Asegura que la imagen se ajuste sin distorsionarse */
-    border-radius: 5px; /* Redondear las esquinas de la imagen si lo prefieres */
-  }
-  
+  width: 80%;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #1a1a2e;
+  border-radius: 10px;
+  color: white;
+}
+
+.tienda-selector {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.tienda-busqueda {
+  display: flex;
+  align-items: center;
+  gap: 100px; /* Espaciado entre el selector de tienda y la barra de búsqueda */
+}
+
+.tienda-dropdown {
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #0099ff;
+  border: none;
+  color: white;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.tienda-dropdown:hover {
+  background-color: #007bb5;
+}
+.sevo{
+  color: white;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.search-input {
+  border: none;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 5px;
+  outline: none;
+}
+
+.search-icon {
+  color: #0099ff;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.producto-card {
+  background-color: #0099ff;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h3, p {
+  margin: 0;
+}
+
+.producto-imagen {
+  width: 50px; /* O ajusta el tamaño como necesites */
+  height: auto; /* Mantén una proporción cuadrada o ajusta */
+  object-fit: cover; /* Asegura que la imagen se ajuste sin distorsionarse */
+  border-radius: 5px; /* Redondear las esquinas de la imagen si lo prefieres */
+}

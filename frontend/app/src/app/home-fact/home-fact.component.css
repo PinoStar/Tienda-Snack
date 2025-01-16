@@ -1,0 +1,77 @@
+.pedido-container {
+    max-width: 800px; /* Limita el ancho máximo para mejor visualización */
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1a1a2e;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Agrega un efecto de sombra */
+  }
+  
+  .pedido-card {
+    background-color: #0099ff;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row; /* Asegura que el contenido se alinee horizontalmente */
+    align-items: center; /* Centra verticalmente la imagen y el texto */
+    transition: transform 0.2s, box-shadow 0.2s; /* Animación suave */
+  }
+  
+  .pedido-card:hover {
+    transform: scale(1.03); /* Efecto de zoom */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* Sombra al pasar el cursor */
+  }
+  
+  .pedido-info {
+    flex-grow: 1; /* Permite que el contenido se expanda correctamente */
+    text-align: left;
+  }
+  
+  .pedido-info h3,
+  .pedido-info h4,
+  .pedido-info p {
+    margin: 0;
+  }
+  
+  .pedidoid {
+    font-weight: bold; /* Hace el texto del ID más destacado */
+    font-size: 1.1em;  /* Ajusta el tamaño del texto */
+    color: #ffffff;
+  }
+  
+  .pedidofecha {
+    font-size: 0.9em; /* Tamaño más pequeño para la fecha */
+    color: #d3d3d3;
+    margin-top: 5px;
+  }
+
+  .pedididototal {
+    display: flex;
+    justify-content: flex-end; /* Alinea el contenido hacia la derecha */
+    align-items: center; /* Centra verticalmente si hay otros elementos */
+    font-weight: bold; /* Resalta el texto */
+    color: #f1f1f1; /* Ajusta el color del texto */
+    font-size: 1.1em; /* Ajusta el tamaño de la fuente */
+    /* margin-top: 10px; Espaciado superior opcional */
+  }
+  
+  
+  .pedido-info p {
+    font-size: 1em; /* Ajusta el tamaño para el texto normal */
+    color: #f1f1f1;
+  }
+  
+  @media (max-width: 600px) {
+    .pedido-card {
+      flex-direction: column; /* Alinea el contenido verticalmente en pantallas pequeñas */
+      align-items: flex-start;
+    }
+  
+  
+    .pedido-info {
+      text-align: center; /* Centra el texto en pantallas pequeñas */
+    }
+  }
+  

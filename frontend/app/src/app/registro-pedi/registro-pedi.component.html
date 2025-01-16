@@ -1,6 +1,6 @@
 <div class="tiendas-container">
   <h2>Lista de Tiendas</h2>
-  <div *ngFor="let tienda of tiendas" class="tienda-card">
+  <div *ngFor="let tienda of tiendas" class="tienda-card" [routerLink]="['/HistoryPedi']">
     <img [src]="tienda.imagen_url" alt="{{ tienda.nombre }}" class="tienda-imagen" />
     <div class="tienda-info">
       <h3 class="tienda-nombre">{{ tienda.nombre }}</h3>

@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #162635; /* Fondo oscuro */
+    /* background-color: #162635; Fondo oscuro */
     color: white;
     padding: 20px 20px;
   }

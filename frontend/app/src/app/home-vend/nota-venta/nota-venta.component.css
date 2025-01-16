@@ -1,0 +1,132 @@
+/* Contenedor principal */
+.nota-de-venta {
+  background-color: #2d3436;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  font-family: Arial, sans-serif;
+}
+
+/* Título */
+.nota-de-venta h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Encabezado fijo */
+.encabezado-fijo {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
+  gap: 10px;
+  background-color: #0984e3;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  margin-bottom: 10px;
+}
+/* Contenedor de totales */
+.totales {
+  display: flex;
+  flex-direction: column; /* Los elementos se apilan verticalmente */
+  align-items: flex-end; /* Alinea los valores a la derecha */
+  gap: 10px;
+  background-color: #0984e3;
+  padding: 10px 50px;
+  border-radius: 8px;
+  color: white;
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
+  max-width: 200px;
+}
+.total{
+  background-color: #14eb14;
+  color: black;
+  /* max-height: 100px; */
+}
+/* Alinea los párrafos dentro de totales */
+.totales p {
+  margin: 0;
+  display: flex;
+  justify-content: space-between; /* Distribuye el texto y el monto a los extremos */
+  width: 125%; /* Asegura que cada párrafo ocupe todo el espacio */
+  text-align: left; /* Alinea el texto a la izquierda */
+}
+
+/* Alinea el contenedor .totales a la derecha dentro de su contenedor padre */
+.padre {
+  display: flex;
+  justify-content: flex-end; /* Alinea el contenedor hijo .totales a la derecha */
+  margin: 10px auto;
+}
+
+
+
+/* Imagen del producto */
+.imagen_url {
+  width: 50px; /* Ajusta el ancho según sea necesario */
+  height: 50px;
+  object-fit: cover; /* Asegura que la imagen mantenga su proporción */
+  border-radius: 5px; /* Opcional, para dar un diseño más suave */
+  align-self: center; /* Centra verticalmente la imagen */
+}
+
+.back-button {
+  position: absolute; /* Posiciona el botón dentro del contenedor */
+  /* top: 10px; Espaciado desde el borde superior */
+  /* left: 20px; */
+  top: auto; /* Espaciado desde el borde izquierdo */
+  background-color: #007bff; /* Fondo azul */
+  border: none; /* Sin bordes */
+  color: white; /* Color del ícono */
+  width: 40px; /* Ancho del botón */
+  height: 40px; /* Altura del botón */
+  border-radius: 10px; /* Bordes redondeados */
+  display: flex; /* Centra el contenido */
+  justify-content: center;
+  align-items: center;
+  cursor: pointer; /* Cambia el cursor al pasar */
+  /* z-index: 1; Asegura que esté encima de la imagen */
+}
+
+.back-button:hover {
+  background-color: #0056b3; /* Color al pasar el mouse */
+}
+
+/* Lista dinámica de productos */
+.productos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.producto {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
+  gap: 10px;
+  background-color: #0984e3;
+  padding: 10px;
+  border-radius: 8px;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.producto-item {
+  text-align: center;
+  align-self: center; /* Centra verticalmente el contenido */
+}
+
+/* Botón */
+.button {
+  background-color: #0984e3;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  margin: 20px auto;
+}

@@ -1,6 +1,13 @@
 <app-banner></app-banner>
-<div>
-    <h1>Hola Mundo Snack</h1>
-    <p>Estamos en la página de inicio de Mundo Snack</p>
-    
+<div class="pedido-container">
+  <h2>Pedidos</h2>
+  <div *ngFor="let pedidos of pedidos" class="pedido-card" [routerLink]="['/FactDetalles']">
+    <div class="pedido-info">
+      <h3 class="pedidoid">Pedido N°: {{ pedidos.id }}</h3>
+      <h4 class="pedidofecha">Fecha de pedido: {{ pedidos.fecha }}</h4>
+      <div class="pedididototal">
+        <p>Total: ${{ pedidos.total }}</p>
+      </div>
+    </div>
+  </div>
 </div>

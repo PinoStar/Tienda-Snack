@@ -22,10 +22,6 @@
       <input [(ngModel)]="nuevoProducto.precio" name="productoPrecio" type="number" placeholder="Precio" step="0.01" required />
       <input [(ngModel)]="nuevoProducto.stock" name="productoStock" type="number" placeholder="Stock" required />
       <input [(ngModel)]="nuevoProducto.imagen_url" name="productoImagen" type="text"  placeholder="Pega aquí la URL de la imagen" />
-
-      <select [(ngModel)]="nuevoProducto.tienda_id" name="productoTienda" placeholder= "Seleccione la Tienda" required>
-          <option *ngFor="let tienda of tiendas" [value]="tienda.id">{{ tienda.nombre }}</option>
-      </select>
       
       
       
@@ -36,7 +32,7 @@
 
   <ul>
     <li *ngFor="let producto of productos">
-        {{ producto.nombre }} - ${{ producto.precio }} - Stock: {{ producto.stock }} - Tienda: {{ getTiendaNombre(producto.tienda_id) }}
+        {{ producto.nombre }} - descripcion {{producto.descripcion}} - ${{ producto.precio }} - Stock: {{ producto.stock }} 
         <br />
         <img [src]="producto.imagen_url"  class="producto-imagen"/>
         <!-- Imagen: {{ producto.imagen_url }} -->
@@ -56,6 +52,9 @@
   <form (ngSubmit)="agregarTienda()">
       <input [(ngModel)]="nuevaTienda.nombre" name="tiendaNombre" placeholder="Nombre de la Tienda" required />
       <input [(ngModel)]="nuevaTienda.ubicacion" name="tiendaUbicacion" placeholder="Ubicación de la Tienda" required />
+      <input [(ngModel)]="nuevaTienda.ruc" name="tiendaRuc" type="text"  placeholder="RUC de la Tienda" />
+      <input [(ngModel)]="nuevaTienda.propietario" name="tiendaPropietario" type="text"  placeholder="Propietario de la Tienda" />
+      <input [(ngModel)]="nuevaTienda.imagen_url" name="tiendaImagen" type="text"  placeholder="Pega aquí la URL de la imagen" />
       <button type="submit">Agregar Tienda</button>
   </form>
   <ul>

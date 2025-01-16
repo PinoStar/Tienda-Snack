@@ -5,7 +5,8 @@ body {
     margin: 0;
     padding: 0;
 }
-.h1,p,h2,h1,button {
+
+.h1, p, h2, h1, button {
     color: white;
 }
 
@@ -19,6 +20,7 @@ body {
 }
 
 .container_product-image {
+    position: relative; /* Necesario para posicionar el botón dentro del contenedor */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,6 +36,27 @@ body {
     max-width: 100%; /* Escala la imagen proporcionalmente */
     max-height: 100%; /* Evita que se deforme */
     border-radius: 10px;
+}
+
+.back-button {
+    position: absolute; /* Posiciona el botón dentro del contenedor */
+    top: 10px; /* Espaciado desde el borde superior */
+    left: 10px; /* Espaciado desde el borde izquierdo */
+    background-color: #007bff; /* Fondo azul */
+    border: none; /* Sin bordes */
+    color: white; /* Color del ícono */
+    width: 40px; /* Ancho del botón */
+    height: 40px; /* Altura del botón */
+    border-radius: 10px; /* Bordes redondeados */
+    display: flex; /* Centra el contenido */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* Cambia el cursor al pasar */
+    z-index: 1; /* Asegura que esté encima de la imagen */
+}
+
+.back-button:hover {
+    background-color: #0056b3; /* Color al pasar el mouse */
 }
 
 .product-name {

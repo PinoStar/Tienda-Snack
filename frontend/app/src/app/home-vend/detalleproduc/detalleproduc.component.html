@@ -2,9 +2,9 @@
 <div class="product-details">
     <div class="container-details">
         <div class="container_product-image">
+            <button class="back-button" (click)="goBack()">←</button>
             <img [src]="producto?.imagen_url" alt="Imagen del Producto" class="product-image">
         </div>
-
         <h1 class="product-name">{{ producto?.nombre }}</h1>
         <p class="product-price">$ {{ producto?.precio }}</p>
 
@@ -20,6 +20,6 @@
             <p>{{ producto?.descripcion }}</p>
         </div>
 
-        <button class="add-to-cart-button" (click)="addToCart()">Añadir al carrito</button>
+        <button class="add-to-cart-button" (click)="addPedido()">Añadir al Pedido</button>
     </div>
 </div>

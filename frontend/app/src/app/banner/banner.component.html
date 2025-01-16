@@ -6,7 +6,7 @@
     <div class="icon-container">
         <!-- Ícono de nota de venta solo visible para Vendedor -->
         <ng-container *ngIf="userRole.trim().toLowerCase() === 'vendedor'; else noSaleIcon">
-            <div class="icon">
+            <div class="icon" (click)="navigateToNotaVenta()">
             <i class="fas fa-file-alt"></i> <!-- Ícono de nota de venta -->
             </div>
         </ng-container>

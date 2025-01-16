@@ -7,6 +7,9 @@ import { RegistroPediComponent } from './registro-pedi/registro-pedi.component';
 import { CatalogoComponent } from './home-vend/catalogo/catalogo.component';
 import { AppComponent } from './app.component';
 import { DetalleProducComponent } from './home-vend/detalleproduc/detalleproduc.component';
+import { NotaVentaComponent } from './home-vend/nota-venta/nota-venta.component';
+import { HistoryPediComponent } from './registro-pedi/history-pedi/history-pedi.component';
+import { FactDetallesComponent } from './home-fact/fact-detalles/fact-detalles.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -14,7 +17,10 @@ export const routes: Routes = [
   { path: 'HomeFact', component: HomeFactComponent },
   { path: 'HomeAdmi', component: HomeAdmiComponent },
   { path: 'RegistroPedi', component: RegistroPediComponent },
+  {path:'HistoryPedi',component:HistoryPediComponent},
+  {path: 'FactDetalles',component:FactDetallesComponent},
   {path:'detalleproduc',component:DetalleProducComponent},
+  {path:'NotaVenta',component:NotaVentaComponent},
   { path: 'detallesproduc/:id', component: DetalleProducComponent },
   {path: 'Catalogo',component:CatalogoComponent},
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Redirección a /login

@@ -23,6 +23,7 @@ export class LoginComponent {
     this.authService.login(this.username, this.password).subscribe({
         next: (response) => {
             if (response.success) {
+                alert('Usuario autenticado pero no sabe el rol jaja');
                 localStorage.setItem('userRole', response.rol);
                 // Redirigir según el rol
                 if (response.rol === 'vendedor') {
