@@ -49,6 +49,7 @@ export class AuthService {
       );
   }
   
+  
   getUserId(): string {
     if (typeof window !== 'undefined' && window.localStorage) {
       return localStorage.getItem('id') || '';  // Devuelve el userId o una cadena vacía si no existe
@@ -128,8 +129,20 @@ export class AuthService {
   getNotaVenta(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/notadeventa`);
   }
-    
+  getNotaVentaId(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/notadeventa/ultimoId`);
+  }
+  getFactura(id: number): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/factura/${id}`);
+  }
   
+  addFactura(data: any): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/factura`, data);
+  }
+
+  getHistorialPedido(tiendaid: number): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/facturas/${tiendaid}`);
+  }
 
   // Métodos para agregar productos, usuarios y tiendas
   agregarUsuario(usuario: any): Observable<any> {

@@ -1,0 +1,106 @@
+.invoice-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #1a1a2e;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+}
+
+.invoice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+.generar-factura{
+    background-color: #0984e3;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    margin: 20px auto;
+}
+.back-button{
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 90px;
+    border: none;
+    background-color: #0099ff;
+    color: white; /* Color de los íconos */
+}
+.generar-factura:disabled{
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+.company-info h1 {
+    font-size: 2.5em;
+    color: #0099ff;
+}
+
+.company-info p {
+    font-size: 1.1em;
+    margin: 5px 0;
+}
+
+.invoice-details h2 {
+    font-size: 2em;
+    color: #ffffff;
+    text-align: right;
+}
+
+.invoice-details p {
+    font-size: 1em;
+    color: #d3d3d3;
+}
+
+.store-info h3 {
+    font-size: 1.5em;
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+.store-info p {
+    font-size: 1.1em;
+    margin: 5px 0;
+}
+
+.product-details h3 {
+    font-size: 1.5em;
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+    background-color: #0099ff;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    font-size: 1.1em;
+}
+
+table th {
+    background-color: #0066cc;
+}
+
+table td {
+    background-color: #e6f2ff;
+    color: #333333;
+}
+
+footer.total {
+    text-align: right;
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #f1f1f1;
+}

@@ -1,7 +1,54 @@
 <app-banner></app-banner>
-<div class="factura-container">
-    <h1>Factura</h1>
-    <div>
-        
-    </div>
+<div class="invoice-container">
+    <header class="invoice-header">
+        <div class="company-info">
+            <button class="back-button" (click)="goBack()">←</button>
+            <h1>MundoSnack</h1>
+            <p>Dirección de la Empresa: Calle Ficticia 123, Ciudad, País</p>
+            <p>RUC: 1234567890</p>
+        </div>
+        <div class="invoice-details">
+            <h2>Factura</h2>
+            <p><strong>Nota de Venta ID:</strong> {{factura.id}}</p>
+            <p><strong>Fecha:</strong> {{ formatearFecha(factura.fecha) }}</p>
+        </div>
+    </header>
+
+    <section class="store-info">
+        <h3>Datos de la Tienda</h3>
+        <p><strong>Nombre:</strong> {{factura.tienda.nombre}}</p>
+        <p><strong>Dirección:</strong> {{factura.tienda.direccion}}</p>
+        <p><strong>RUC:</strong> {{factura.tienda.ruc}}</p>
+        <p><strong>Propietario:</strong> {{factura.tienda.propietario}}</p>
+    </section>
+
+    <section class="product-details">
+        <h3>Productos</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Precio Unitario</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let detalle of factura.detalles">
+                    <td>{{detalle.nombre_producto}}</td>
+                    <td>{{detalle.cantidad}}</td>
+                    <td>{{detalle.precio_unitario}}</td>
+                    <td>{{detalle.subtotal}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <footer class="total">
+        <p><strong>Subtotal:</strong> {{factura.total}}</p>
+        <p><strong>IVA (15%):</strong> {{iva | number:'1.2-2'}}</p>
+        <p><strong>Total:</strong> {{totalConIva | number:'1.2-2'}}</p>
+    </footer>
+
+    <button class="generar-factura" (click)="generarFactura()"[disabled]="isButtonDisabled">Generar Factura</button>
 </div>

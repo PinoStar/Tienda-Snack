@@ -25,4 +25,9 @@ export class BannerComponent implements OnInit {
     this.authService.clearTiendaSeleccionada();
     this.router.navigate(['/NotaVenta']);
   }
+
+  cerrarSesion() {
+    // this.authService.logout();
+    this.router.navigate(['/Login']);
+  }
 }
