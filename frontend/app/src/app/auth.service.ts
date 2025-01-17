@@ -6,7 +6,7 @@ import { Observable, tap,BehaviorSubject, switchMap } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl = 'http://localhost:3000'; // Base URL
+  private baseUrl = 'https://tienda-snack-1.onrender.com'; // Base URL
 
   constructor(private http: HttpClient) {}
   private tiendaSeleccionadaSubject = new BehaviorSubject<any>(null); // Estado de la tienda seleccionada
