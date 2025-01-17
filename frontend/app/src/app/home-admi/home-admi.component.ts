@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service'; // Asegúrate de importar el servicio AuthService
 import { CommonModule } from '@angular/common'; // Importa CommonModule para ngIf, ngFor, etc.
-import { FormsModule } from '@angular/forms'; // Importa FormsModule para el manejo de formularios
+import { FormsModule } from '@angular/forms';
+import { BannerComponent } from "../banner/banner.component"; // Importa FormsModule para el manejo de formularios
 
 @Component({
   selector: 'app-home-admi',
   standalone: true,
-  imports: [CommonModule, FormsModule], // Usa CommonModule y FormsModule en lugar de AppModule
+  imports: [CommonModule, FormsModule, BannerComponent], // Usa CommonModule y FormsModule en lugar de AppModule
   templateUrl: './home-admi.component.html',
   styleUrls: ['./home-admi.component.css'],
 })
@@ -69,6 +70,17 @@ export class HomeAdmiComponent implements OnInit {
     } else {
       alert('Por favor, complete todos los campos del usuario.');
     }
+  }
+
+  editarUsuario(id:number){
+    this.authService.editarusuario(id).subscribe(
+      () => {
+        this.cargarDatos();
+      },
+      (error) => {
+        console.error('Error al editar usuario', error);
+      } 
+    );
   }
 
   eliminarUsuario(id: number) {

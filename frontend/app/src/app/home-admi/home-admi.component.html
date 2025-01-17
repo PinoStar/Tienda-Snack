@@ -1,3 +1,5 @@
+
+<app-banner></app-banner>
 <div class="container">
   <!-- Sección de Usuarios -->
   <h2>Gestión de Usuarios</h2>
@@ -10,6 +12,7 @@
   <ul>
       <li *ngFor="let usuario of usuarios">
           {{ usuario.username }} - {{ usuario.rol }}
+          <!-- <button (click)="editarUsuario()"></button> -->
           <button (click)="eliminarUsuario(usuario.id)">Eliminar</button>
       </li>
   </ul>

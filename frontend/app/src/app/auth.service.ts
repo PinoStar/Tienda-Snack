@@ -160,6 +160,9 @@ export class AuthService {
     return this.http.post<any>(`${this.baseUrl}/tiendas`, tienda);
   }
 
+  editarusuario(id:number):Observable<void>{
+    return this.http.put<void>(`${this.baseUrl}/usuarios/${id}`, id);
+  }
   // Métodos para eliminar productos, usuarios y tiendas
   eliminarUsuario(id: number): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/usuarios/${id}`);
@@ -175,6 +178,7 @@ export class AuthService {
   addPedido(pedidoData: any): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/pedidos_productos`, pedidoData);
   }
+
 
 
 }
