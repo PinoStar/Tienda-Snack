@@ -3,32 +3,33 @@ import { CommonEngine } from '@angular/ssr';
 import express from 'express';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
+import path from 'node:path';
 import bootstrap from './src/main.server';
 
-// The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
+  // Crear una instancia de Express
   const server = express();
+
+  // Obtener las rutas del servidor y del navegador
   const serverDistFolder = dirname(fileURLToPath(import.meta.url));
   const browserDistFolder = resolve(serverDistFolder, '../browser');
   const indexHtml = join(serverDistFolder, 'index.server.html');
 
+  // Crear instancia de CommonEngine para renderización SSR
   const commonEngine = new CommonEngine();
 
+  // Configurar el motor de vistas y la carpeta de vistas
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
 
-  // Example Express Rest API endpoints
-  // server.get('/api/**', (req, res) => { });
-  // Serve static files from /browser
-  server.get('**', express.static(browserDistFolder, {
-    maxAge: '1y',
-    index: 'index.html',
-  }));
+  // Servir los archivos estáticos de la aplicación Angular
+  server.use(express.static(path.join(__dirname, 'dist', 'app')));
 
-  // All regular routes use the Angular engine
+  // Manejar las solicitudes a todas las rutas con la renderización SSR
   server.get('**', (req, res, next) => {
     const { protocol, originalUrl, baseUrl, headers } = req;
 
+    // Renderizar el contenido con Angular SSR (usando CommonEngine)
     commonEngine
       .render({
         bootstrap,
@@ -45,13 +46,13 @@ export function app(): express.Express {
 }
 
 function run(): void {
+  // Configurar el puerto en el que escuchará el servidor
   const port = process.env['PORT'] || 4000;
 
-  // Start up the Node server
+  // Iniciar el servidor
   const server = app();
   server.listen(port, () => {
     console.log(`Node Express server listening on http://localhost:${port}`);
   });
 }
-
 run();

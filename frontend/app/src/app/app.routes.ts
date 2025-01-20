@@ -26,6 +26,7 @@ export const routes: Routes = [
   { path: 'detallesproduc/:id', component: DetalleProducComponent },
   {path: 'Catalogo',component:CatalogoComponent},
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Redirección a /login
+  {path: 'nofound', component:AppComponent},
   //{ path: '**', component: LoginComponent } // Ruta wildcard para cualquier otra ruta
 ];
 
