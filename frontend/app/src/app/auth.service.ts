@@ -6,7 +6,7 @@ import { Observable, tap,BehaviorSubject, switchMap } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl = 'http://localhost:3000'; // Base URL
+  private baseUrl = 'https://tienda-snack-1.onrender.com'; // Base URL
 
   constructor(private http: HttpClient) {}
   private tiendaSeleccionadaSubject = new BehaviorSubject<any>(null); // Estado de la tienda seleccionada
@@ -160,6 +160,9 @@ export class AuthService {
     return this.http.post<any>(`${this.baseUrl}/tiendas`, tienda);
   }
 
+  editarusuario(id:number):Observable<void>{
+    return this.http.put<void>(`${this.baseUrl}/usuarios/${id}`, id);
+  }
   // Métodos para eliminar productos, usuarios y tiendas
   eliminarUsuario(id: number): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/usuarios/${id}`);
@@ -175,6 +178,7 @@ export class AuthService {
   addPedido(pedidoData: any): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/pedidos_productos`, pedidoData);
   }
+
 
 
 }
