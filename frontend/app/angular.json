@@ -14,6 +14,8 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist",
+            "outputHashing": "none",
+            "deleteOutputPath": true,
             "index": "src/index.html",
             "baseHref": "/",
             "browser": "src/main.ts",
@@ -52,7 +54,7 @@
                   "maximumError": "4kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "none"
             },
             "development": {
               "optimization": false,

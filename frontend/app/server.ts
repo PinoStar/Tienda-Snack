@@ -23,7 +23,7 @@ export function app(): express.Express {
   server.set('views', browserDistFolder);
 
   // Servir los archivos estáticos de la aplicación Angular
-  server.use(express.static(path.join(__dirname, 'dist', 'app')));
+  server.use(express.static(path.join(__dirname, 'dist')));
 
   // Manejar las solicitudes a todas las rutas con la renderización SSR
   server.get('**', (req, res, next) => {
