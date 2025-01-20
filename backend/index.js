@@ -2,7 +2,6 @@ const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-require('dotenv').config();
 
 const app = express();
 const port = 3000;
@@ -13,11 +12,11 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 // Conexión a la base de datos
 const db = mysql.createConnection({
-    host: process.env.service_host,
-    user: process.env.service_username,
-    port: process.env.service_port,
-    password: process.env.SERVICE_PASSWORD,
-    database: process.env.service_database,
+    host: 'mysql-ca47738-carlitosbriones24-eb25.g.aivencloud.com',
+    user: 'avnadmin',
+    port: 17891,
+    password: 'AVNS_hv2hpTZ9FFXZ6GF-1Ph',
+    database: 'distribuidor_db',
     ssl: {
         rejectUnauthorized: false // Esto es importante si el servidor no tiene un certificado validado
     }
