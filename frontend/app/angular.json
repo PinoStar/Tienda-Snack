@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist",
+            "outputPath": "../../bind",
             "outputHashing": "none",
             "deleteOutputPath": true,
             "index": "src/index.html",

@@ -2,6 +2,7 @@ const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const path = require('path');
 
 const app = express();
 const port = 3000;
@@ -529,18 +530,15 @@ app.post('/pedidos_productos', (req, res) => {
 
 
 // // const express = require('express');
-// const path = require('path');
-// // const app = express();
+app.use(express.static(path.join(__dirname, '../bind')));
 
-// app.use(express.static(path.join(__dirname, 'dist', 'app')));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../bind','browser', 'index.html'));
+});
 
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname, 'dist', 'app', 'index.html'));
-// });
-
-// app.listen(8080, () => console.log('Servidor corriendo en puerto 8080'));
+app.listen(8080, () => console.log('Servidor corriendo en puerto 8080'));
 
 // Inicia el servidor
- app.listen(port, () => {
-     console.log(`Servidor corriendo en http://localhost:${port}`);
- });
+//  app.listen(port, () => {
+//      console.log(`Servidor corriendo en http://localhost:${port}`);
+//  });

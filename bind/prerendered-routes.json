@@ -1,0 +1,13 @@
+{
+  "routes": [
+    "/Catalogo",
+    "/detalleproduc",
+    "/HomeAdmi",
+    "/HomeFact",
+    "/HomeVend",
+    "/login",
+    "/nofound",
+    "/NotaVenta",
+    "/RegistroPedi"
+  ]
+}

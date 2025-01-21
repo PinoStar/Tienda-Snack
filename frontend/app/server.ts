@@ -13,7 +13,7 @@ export function app(): express.Express {
   // Obtener las rutas del servidor y del navegador
   const serverDistFolder = dirname(fileURLToPath(import.meta.url));
   const browserDistFolder = resolve(serverDistFolder, '../browser');
-  const indexHtml = join(serverDistFolder, 'index.server.html');
+  const indexHtml = join(serverDistFolder, 'index.html');
 
   // Crear instancia de CommonEngine para renderización SSR
   const commonEngine = new CommonEngine();
@@ -23,7 +23,7 @@ export function app(): express.Express {
   server.set('views', browserDistFolder);
 
   // Servir los archivos estáticos de la aplicación Angular
-  server.use(express.static(path.join(__dirname, 'dist')));
+  server.use(express.static(path.join(__dirname, '../../bind/browser')));
 
   // Manejar las solicitudes a todas las rutas con la renderización SSR
   server.get('**', (req, res, next) => {
